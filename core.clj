@@ -22,11 +22,15 @@
       (.setColor gfx (java.awt.Color. v v v))
       (.fillRect gfx x y 1 1))))
 
-(draw-values frame bit-xor 800 800)
 
 
 (def frame (java.awt.Frame.))
 
+
+(comment 
+  (.setVisible frame true)
+
+(draw-values frame (comp + +) 800 800)
 (->> java.awt.Frame .getMethods (map #(.getName %)) (filter #(re-find #"Vis" %)))
 
 (for [methodz (.getMethods java.awt.Frame)
@@ -48,4 +52,4 @@
 
 (clear gfx)
 
-(clojure.stacktrace/e)
+(clojure.stacktrace/e))
