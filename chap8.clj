@@ -19,7 +19,22 @@
 (macroexpand `(-> {} 
                   (assoc :monke "macaco")
                   (assoc :frong 20)
+                  (assoc :frong 20)
+                  (assoc :frong 20)
+                  (assoc :frong 20)
+                  (assoc :frong 20)
+                  (assoc :frong 20)
+                  (assoc :frong 20)
+                  (assoc :frong 20)
+                  (assoc :frong 20)
                  ))
+
+(defn monke-string [& strings]
+  strings)
+
+(monke-string "banana" "maca" "macaco")
+
+
 
 (macroexpand-1 `(-> {} 
                   (assoc :monke "macaco")
@@ -39,6 +54,8 @@
 (do-until
   true (println "Banana")
   true (println "MOnke"))
+
+(macroexpand `(if (not condition) "got it"))
 
 
 
