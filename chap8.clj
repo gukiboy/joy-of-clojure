@@ -58,6 +58,18 @@
 (macroexpand `(if (not condition) "got it"))
 
 
+;; watches a variable?!??!
+(defmacro def-watched [name & value]
+  `(do
+     (def ~name ~@value)
+     (add-watch (var ~name)
+                :re-bind
+                (fn [~'key ~'r old# new#]
+                  (println old# " -> " new#)))))
+
+(def-watched x (* 12 12))
+
+(def x 0)
 
 
 ;kinda tricky
